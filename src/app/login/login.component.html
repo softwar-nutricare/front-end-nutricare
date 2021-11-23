@@ -1,0 +1,31 @@
+<form class="text-center border border-light p-5 col-lg-6 offset-lg-3" (ngSubmit)="getUser()">
+
+    <p class="h4 mb-4">Login</p>
+  
+    <input type="username" id="defaultLoginFormUsername" class="form-control mb-4" placeholder="Username"
+    name="Username"
+    required [(ngModel)]="username">
+
+    <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password"
+    name="Password"
+    required [(ngModel)]="password">
+  
+    <div class="d-flex justify-content-around">
+      <div>
+        <a href="">¿Olvidaste tu contraseña?</a>
+      </div>
+    </div>
+    <br>
+    <button mdbBtn color="info" block="true" class="my-4" type="submit" class="btn btn-success">Ingresar</button>
+    <br>
+    <br>
+    <p><b>¿No eres miembro?</b>
+      <br>
+      <br>
+      <button type="button" class="btn btn-success" (click)='registerClient()'>Nuevo Usuario</button>
+      <br>
+      <br>
+      <button type="button" class="btn btn-success" (click)='registerNutritionist()'>Nuevo Nutricionista</button>
+    </p>
+  
+</form>
