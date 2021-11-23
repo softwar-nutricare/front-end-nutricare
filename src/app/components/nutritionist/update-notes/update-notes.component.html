@@ -1,0 +1,15 @@
+<br/>
+<form class="text-center border border-light p-5 col-lg-6 offset-lg-3" (ngSubmit)="updateNotes(appointment)">
+
+  <p class="h4 mb-4">Modificar anotaciones</p>
+
+  <input type="text" class="form-control" id="notes"
+         name= "notes" placeholder="Notes"
+         required [(ngModel)]="appointment.nutritionistNotes" />
+  <br>
+
+  <button type="submit" class="btn btn-success">
+    Modificar
+  </button>
+
+</form>
