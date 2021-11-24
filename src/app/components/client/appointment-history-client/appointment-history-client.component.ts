@@ -10,14 +10,14 @@ import { AppointmentService } from 'src/app/services/appointment.service';
   styleUrls: ['./appointment-history-client.component.css']
 })
 export class AppointmentHistoryClientComponent implements OnInit {
-
+  
   id: number = 0;
   appointments: Appointment[]=[];
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private appointmentService: AppointmentService) { }
+  private appointmentService: AppointmentService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -26,16 +26,16 @@ export class AppointmentHistoryClientComponent implements OnInit {
 
   loadDataAppointments(){
     this.appointmentService.getAppointmentByClient(this.id)
-      .subscribe(datos=>{
-        console.log(datos)
-        this.appointments = datos;
-      }, error=>console.log(error));
+    .subscribe(datos=>{
+      console.log(datos)
+      this.appointments = datos;
+    }, error=>console.log(error));
   }
 
   viewDiet(appointment: Appointment){
     this.router.navigate(['list-diet', appointment.id])
   }
-
+  
   return(){
     this.router.navigate(['menu', this.id]);
   }

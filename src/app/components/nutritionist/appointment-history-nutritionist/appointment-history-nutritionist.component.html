@@ -1,34 +1,37 @@
 <br/>
 <h2>Historial de asesorías</h2>
 <br/>
-<button type="button" class="btn btn-success" (click)='return()'>
+<button type="button" class="btn btn-success" (click)='return(nutritionist_id)'>
     Atrás
 </button>
-<br>
-<div>
-</div>
 <br/>
-
+<div>
     <table class="table table-striped">
         <thead class="thead_dark">
             <tr>
-                <th scope="col">Nutricionista</th>
+                <th scope="col">Cliente</th>
                 <th scope="col">Fecha de la asesoría</th>
                 <th scope="col">Dieta</th>
+                <th scope="col">Anotaciones</th>
             </tr>
         </thead>
         <tbody>
             <ng-container *ngFor="let appointment of appointments">
                 <tr>
-                    <td>{{ appointment.nutritionist.firstName }} {{ appointment.nutritionist.lastName }}</td>
+                    <td>{{ appointment.client.firstName }} {{ appointment.client.lastName }}</td>
                     <td>{{ appointment.appointmentDate }}</td>
                     <td>
                         <button type="button" class="btn btn-success" (click)='viewDiet(appointment)'>
                             Ver Dieta
                         </button>
                     </td>
+                    <td>
+                        <button type="button" class="btn btn-success" (click)='viewNotes(appointment)'>
+                            Ver Anotaciones
+                        </button>
+                    </td>
                 </tr>
             </ng-container>
         </tbody>
     </table>
-
+</div>

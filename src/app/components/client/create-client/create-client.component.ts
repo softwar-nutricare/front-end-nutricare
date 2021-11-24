@@ -14,15 +14,15 @@ export class CreateClientComponent implements OnInit {
   client: Client = new Client();
 
   constructor(private route: ActivatedRoute,
-              private router: Router,
-              private clientService: ClientService) { }
+    private router: Router,
+    private clientService: ClientService) { }
 
   ngOnInit(): void {
   }
 
   insertClient(){
     this.clientService.createClient(this.client)
-      .subscribe(datos=>console.log(datos), error=>console.log(error));
+    .subscribe(datos=>console.log(datos), error=>console.log(error));
     this.client = new Client();
     this.router.navigate(['login']);
   }

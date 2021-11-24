@@ -15,23 +15,23 @@ export class UpdateClientComponent implements OnInit {
   client: Client = new Client();
 
   constructor(private route: ActivatedRoute,
-              private router: Router,
-              private clientService : ClientService) { }
+    private router: Router,
+    private clientService : ClientService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.clientService.getClientById(this.id)
-      .subscribe(datos=>{
-        console.log(datos)
-        this.client = datos;
-      }, error=>console.log(error));
+    .subscribe(datos=>{
+      console.log(datos)
+      this.client = datos;
+    }, error=>console.log(error));
   }
 
   updateClient(client: Client){
     this.clientService.updateClient(this.id, client)
-      .subscribe(datos=>{
-        console.log(datos)
-      }, error=>console.log(error));
+    .subscribe(datos=>{
+      console.log(datos)
+    }, error=>console.log(error));
     this.client = new Client();
     this.router.navigate(['list-clients', client.id])
   }

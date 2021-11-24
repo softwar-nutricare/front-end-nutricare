@@ -1,0 +1,96 @@
+<br>
+<br>
+<div class="container">
+    <div class="main-body">
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                    <div class="mt-3">
+                      <h4>{{nutritionist.username}}</h4>
+                      <h6>{{professionalProfile.professional_experience_description}}</h6>
+                      <br>
+                      <button type="button" class="btn btn-success" (click)='updateProfessionalProfile(nutritionist)'>
+                        Actualizar información profesional
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>              
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Nombre</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        {{nutritionist.firstName}} {{nutritionist.lastName}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        {{nutritionist.email}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">CNP</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        {{nutritionist.cnpNumber}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="d-grid gap-2">
+                      <a class="btn btn-success " (click)='updateNutritionist(nutritionist)'>Actualizar</a>
+                      <a class="btn btn-success " (click)='deleteNutritionist(nutritionist)'> Eliminar cuenta</a>
+                      <a class="btn btn-success " (click)='insertSpecialty(professionalProfile)'> Añadir especialidad</a>
+                      <a class="btn btn-success " (click)='return()'>Atrás</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div class="card">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Especialidad</th>
+                                <th>Institución</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngFor="let specialty of specialties">
+                                <tr>
+                                    <td>{{specialty.name}}</td>
+                                    <td>{{specialty.institutionName}}</td>
+                                    <td>
+                                      <button type="button" class="btn btn-success" (click)='deleteSpecialty(specialty, professionalProfile.id)'>
+                                        Eliminar
+                                      </button>
+                                    </td>
+                                </tr>
+                            </ng-container>
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>

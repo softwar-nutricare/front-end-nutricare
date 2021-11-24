@@ -1,0 +1,15 @@
+<br/>
+<form class="text-center border border-light p-5 col-lg-6 offset-lg-3" (ngSubmit)="updateProfessionalProfile()">
+
+    <p class="h4 mb-4">Actualizar Perfil</p>
+
+    <input type="text" class="form-control" id="professional_experience_description" 
+    name= "professional_experience_description" placeholder="Descripción de experiencia profesional" 
+    required [(ngModel)]="professionalProfile.professional_experience_description" />
+    <br>
+
+    <button type="submit" class="btn btn-success">
+        Actualizar
+    </button>
+
+  </form>

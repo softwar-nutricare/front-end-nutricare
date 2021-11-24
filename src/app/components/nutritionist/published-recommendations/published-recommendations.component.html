@@ -1,0 +1,44 @@
+<br/>
+<h2>Recomendaciones publicadas</h2>
+
+<button type="button" class="btn btn-success" (click)='insertRecommendation(nutritionist_id)'>
+    Publicar nueva recomendación
+</button>
+<br/>
+<br>
+<button type="button" class="btn btn-success" (click)='return()'>
+  Atrás
+</button>
+<br/>
+
+<br/>
+<table class="table table-striped">
+    <thead class="thead_dark">
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Fecha de creación</th>
+            <th scope="col">Última modificación</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let recommendation of recommendations">
+            <tr>
+                <td>{{ recommendation.name }}</td>
+                <td>{{ recommendation.description }}</td>
+                <td>{{ recommendation.createdAt }}</td>
+                <td>{{ recommendation.lastModification }}</td>
+                <td>
+                    <button type="button" class="btn btn-success" (click)='updateRecommendation(recommendation, nutritionist_id)'>
+                        Actualizar
+                    </button>
+                    <button type="button" class="btn btn-success" (click)='deleteRecommendation(recommendation.id)'>
+                        Eliminar
+                    </button>
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
+
+<br>
