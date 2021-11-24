@@ -1,0 +1,28 @@
+
+<div class="main-body" oncontextmenu='return false' class='snippet-body'>
+    <div class="card mt-50 mb-50">
+        <div class="card-title mx-auto"> Métodos de pago </div>
+            <div class="nav">
+                <ul class="mx-auto">
+                    <li class="active">Métodos de pago disponibles</li>
+                </ul>
+            </div>
+            <form>
+                <ng-container *ngFor="let payment of payments">
+                    <div class="row row-1">
+                        <div class="col-2"><img class="img-fluid" src="https://img.icons8.com/color/48/000000/visa.png" /></div>
+                        <div class="col-7"> <input type="text" placeholder={{payment.cardNumber}} disabled></div>
+                        <div class="col-3 d-flex justify-content-center"> <a (click)='deletePaymentMethod(payment)'>Remove card</a> </div>
+                    </div>
+                </ng-container>
+                <button type="button" class="btn btn-primary" (click)='newPaymentMethod(client)'>
+                    Nuevo método de pago
+                </button>
+                <button type="button" class="btn btn-success" (click)='return()'>
+                    Atrás
+                </button>
+            </form>
+        </div>        
+    </div>
+
+    
