@@ -1,34 +1,33 @@
 <br/>
 <form class="text-center border border-light p-5 col-lg-6 offset-lg-3" (ngSubmit)="updateNutritionist()">
 
-  <p class="h4 mb-4">Actualizar Perfil</p>
+    <p class="h4 mb-4">Actualizar Perfil</p>
 
-  <input type="text" class="form-control" id="username"
-         name= "username" placeholder="Username"
-         required [(ngModel)]="nutritionist.username" />
-  <br>
+    <input type="text" class="form-control" id="username" 
+    name= "username" placeholder="Username" 
+    required [(ngModel)]="nutritionist.username" />
+    <br>
 
-  <input type="text" class="form-control" id="firstName"
-         name= "firstName" placeholder="FirstName"
-         required [(ngModel)]="nutritionist.firstName" />
+    <input type="text" class="form-control" id="firstName" 
+    name= "firstName" placeholder="FirstName" 
+    required [(ngModel)]="nutritionist.firstName" />
 
-  <br>
+    <br>
 
-  <input type="text" class="form-control" id="lastName"
-         name= "lastName" placeholder="LastName"
-         required [(ngModel)]="nutritionist.lastName" />
+    <input type="text" class="form-control" id="lastName" 
+    name= "lastName" placeholder="LastName" 
+    required [(ngModel)]="nutritionist.lastName" />
 
-  <br>
+    <br>
+    
+    <input type="text" class="form-control" id="email" 
+    name= "email" placeholder="Email" 
+    required [(ngModel)]="nutritionist.email" />
 
-  <input type="text" class="form-control" id="email"
-         name= "email" placeholder="Email"
-         required [(ngModel)]="nutritionist.email" />
+    <br>
 
-  <br>
+    <button type="submit" class="btn btn-success">
+        Actualizar
+    </button>
 
-  <button type="submit" class="btn btn-success">
-    Actualizar
-  </button>
-
-</form>
-
+  </form>

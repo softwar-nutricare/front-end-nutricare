@@ -25,11 +25,11 @@ export class PendingAppointmentsComponent implements OnInit {
 
   loadDataAppointments(){
     this.appointmentService.getAppointmentByNutritionist(this.nutritionist_id)
-      .subscribe(appointments=>this.appointments=appointments);
+    .subscribe(appointments=>this.appointments=appointments);
   }
-
+  
   return(){
     this.router.navigate(['menu-nutritionist', this.nutritionist_id]);
   }
-
+  
 }

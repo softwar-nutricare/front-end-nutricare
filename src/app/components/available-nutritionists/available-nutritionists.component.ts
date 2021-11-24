@@ -26,13 +26,13 @@ export class AvailableNutritionistsComponent implements OnInit {
 
   loadDataAppointments(){
     this.nutritionistService.getNutritionistList()
-      .subscribe(nutritionists=>this.nutritionists=nutritionists);
+    .subscribe(nutritionists=>this.nutritionists=nutritionists);
   }
 
   nutritionistSelected(nutritionist_id: number){
     this.router.navigate(['nutritionist-selected', this.client_id, nutritionist_id])
   }
-
+  
   return(){
     this.router.navigate(['menu', this.client_id]);
   }

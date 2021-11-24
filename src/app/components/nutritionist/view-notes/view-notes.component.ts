@@ -21,10 +21,10 @@ export class ViewNotesComponent implements OnInit {
   ngOnInit(): void {
     this.appointment_id = this.route.snapshot.params['id'];
     this.appointmentService.getAppointmentById(this.appointment_id)
-      .subscribe(datos=>{
-        console.log(datos)
-        this.appointment = datos;
-      }, error=>console.log(error));
+    .subscribe(datos=>{
+      console.log(datos)
+      this.appointment = datos;
+    }, error=>console.log(error));
   }
 
   updateNotes(appointment: Appointment){

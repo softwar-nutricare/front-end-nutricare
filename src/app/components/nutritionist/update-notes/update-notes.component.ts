@@ -14,23 +14,23 @@ export class UpdateNotesComponent implements OnInit {
   appointment: Appointment = new Appointment();
 
   constructor(private route: ActivatedRoute,
-              private router: Router,
-              private appointmentService : AppointmentService) { }
+    private router: Router,
+    private appointmentService : AppointmentService) { }
 
   ngOnInit(): void {
     this.appointmentId = this.route.snapshot.params['id'];
     this.appointmentService.getAppointmentById(this.appointmentId)
-      .subscribe(datos=>{
-        console.log(datos)
-        this.appointment = datos;
-      }, error=>console.log(error));
+    .subscribe(datos=>{
+      console.log(datos)
+      this.appointment = datos;
+    }, error=>console.log(error));
   }
 
   updateNotes(appointment: Appointment){
     this.appointmentService.updateAppointmentNotes(this.appointmentId, appointment, appointment.nutritionistNotes)
-      .subscribe(datos=>{
-        console.log(datos)
-      }, error=>console.log(error));
+    .subscribe(datos=>{
+      console.log(datos)
+    }, error=>console.log(error));
     this.appointment = new Appointment();
     this.return(appointment);
   }

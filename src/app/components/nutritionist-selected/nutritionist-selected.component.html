@@ -1,94 +1,94 @@
 <br>
 <button type="button" class="btn btn-success" (click)='return()'>
-  Atrás
+    Atrás
 </button>
 <br>
 <br>
 
 <div style="display: flex; width: 100%; justify-content: space-evenly;">
-  <div class="card " style="width: 12rem; border: 1px solid black;">
-    <div class="card " style="width: 12rem;">
-      <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="card-img-top" alt="...">
-      <div class="text-center" >
-        <p class="card-text"> {{ nutritionist.firstName }} {{ nutritionist.lastName }} </p>
-        <p class="card-text">CNP: {{ nutritionist.cnpNumber }}</p>
-        <p class="card-text">Email: {{ nutritionist.email }}</p>
-        <p class="card-text">Calificación</p>
-        <form>
-          <p class="clasificacion">
-            <input id="radio1" type="radio" name="estrellas" value="5">
-            <label for="radio1">★</label>
-            <input id="radio2" type="radio" name="estrellas" value="4">
-            <label for="radio2">★</label>
-            <input id="radio3" type="radio" name="estrellas" value="3">
-            <label for="radio3">★</label>
-            <input id="radio4" type="radio" name="estrellas" value="2">
-            <label for="radio4">★</label>
-            <input id="radio5" type="radio" name="estrellas" value="1">
-            <label for="radio5">★</label>
-          </p>
-        </form>
-      </div>
+    <div class="card " style="width: 12rem; border: 1px solid black;">
+        <div class="card " style="width: 12rem;">
+            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="card-img-top" alt="...">
+            <div class="text-center" >
+                <p class="card-text"> {{ nutritionist.firstName }} {{ nutritionist.lastName }} </p>
+                <p class="card-text">CNP: {{ nutritionist.cnpNumber }}</p>
+                <p class="card-text">Email: {{ nutritionist.email }}</p>
+                <p class="card-text">Calificación</p>
+                <form>
+                    <p class="clasificacion">
+                      <input id="radio1" type="radio" name="estrellas" value="5">
+                      <label for="radio1">★</label>
+                      <input id="radio2" type="radio" name="estrellas" value="4">
+                      <label for="radio2">★</label>
+                      <input id="radio3" type="radio" name="estrellas" value="3">
+                      <label for="radio3">★</label>
+                      <input id="radio4" type="radio" name="estrellas" value="2">
+                      <label for="radio4">★</label>
+                      <input id="radio5" type="radio" name="estrellas" value="1">
+                      <label for="radio5">★</label>
+                    </p>
+                  </form>
+            </div>
+        </div>
     </div>
-  </div>
-  <div>
-    <br>
-    <h3 class="text-center">HORARIOS DISPONIBLES</h3>
-    <br>
-    <!--aqui poner las varibles que quieres mostrar  {{ variable.varible }} {{ variable.varible }} {{ variable.varible }}-->
-    <button type="button" class="btn btn-outline-success" style="width: 40rem; display: flex; justify-content: space-evenly;"
-            (click)='createAppointment(client_id, nutritionist_id)'>
-      <span>2021-05-08</span>
-      <span>01:05:28.275</span>
-      <span>+00:00</span>
-    </button>
-    <br>
-    <button type="button" class="btn btn-outline-success" style="width: 40rem; display: flex; justify-content: space-evenly;"
-            (click)='createAppointment(client_id, nutritionist_id)'>
-      <span>2021-05-08</span>
-      <span>01:05:28.275</span>
-      <span>+00:00</span>
-    </button>
-    <br>
-    <button type="button" class="btn btn-outline-success" style="width: 40rem; display: flex; justify-content: space-evenly;"
-            (click)='createAppointment(client_id, nutritionist_id)'>
-      <span>2021-05-08</span>
-      <span>01:05:28.275</span>
-      <span>+00:00</span>
-    </button>
-    <br>
-    <button type="button" class="btn btn-outline-success" style="width: 40rem; display: flex; justify-content: space-evenly;"
-            (click)='createAppointment(client_id, nutritionist_id)'>
-      <span>2021-05-08</span>
-      <span>01:05:28.275</span>
-      <span>+00:00</span>
-    </button>
-    <br>
-  </div>
-
+    <div>               
+        <br>
+        <h3 class="text-center">HORARIOS DISPONIBLES</h3>
+        <br>    
+        <!--aqui poner las varibles que quieres mostrar  {{ variable.varible }} {{ variable.varible }} {{ variable.varible }}-->
+        <button type="button" class="btn btn-outline-success" style="width: 40rem; display: flex; justify-content: space-evenly;" 
+        (click)='createAppointment(client_id, nutritionist_id)'>
+            <span>2021-05-08</span>
+            <span>01:05:28.275</span>
+            <span>+00:00</span>
+        </button>
+        <br> 
+        <button type="button" class="btn btn-outline-success" style="width: 40rem; display: flex; justify-content: space-evenly;"
+        (click)='createAppointment(client_id, nutritionist_id)'>
+            <span>2021-05-08</span>
+            <span>01:05:28.275</span>
+            <span>+00:00</span>
+        </button>
+        <br> 
+        <button type="button" class="btn btn-outline-success" style="width: 40rem; display: flex; justify-content: space-evenly;"
+        (click)='createAppointment(client_id, nutritionist_id)'>
+            <span>2021-05-08</span>
+            <span>01:05:28.275</span>
+            <span>+00:00</span>
+        </button>
+        <br> 
+        <button type="button" class="btn btn-outline-success" style="width: 40rem; display: flex; justify-content: space-evenly;"
+        (click)='createAppointment(client_id, nutritionist_id)'>
+            <span>2021-05-08</span>
+            <span>01:05:28.275</span>
+            <span>+00:00</span>
+        </button>
+        <br>
+    </div>
+        
 </div>
 
 <br>
 
 <div>
-  <div class="card " style="border: 1px solid black">
-    <div>
+    <div class="card " style="border: 1px solid black">
+        <div>
             <span class="badge bg-light text-dark">
                 <h3>
                     INDICACIONES
                 </h3>
             </span>
+        </div>
+        <div class="card mb-3" style="border: 1px  solid black;  display: flex; justify-content: space-evenly; width: 100%; flex-direction: row;">
+            <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpHJtBkYhnrUvPuGTttaDjlzypFGhlAYaGTQ&usqp=CAU" alt="Card image cap" style="width: 20rem;border: 1px  solid black">
+            <div class="card-body" style="border: 1px  solid black; width: 50rem;">
+                <ul>
+                    <li><h5>Si desea ver los horarios disponibles de un nutricionista, haga click en "Ver horarios disponibles" del nutricionista que prefiera.</h5></li>
+                    <li><h5>Luego, seleccione uno de los horarios disponibles del nutricionista en el que usted quiera que se realice la asesoría.</h5></li>
+                    <li><h5>Cuando haya seleccionado un horario, verifique los datos del nutricionista y la fecha eligida.</h5></li>
+                    <li><h5>Finalmente, haga click en "Agendar" para realizar el pago y agendar la asesoría.</h5></li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="card mb-3" style="border: 1px  solid black;  display: flex; justify-content: space-evenly; width: 100%; flex-direction: row;">
-      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpHJtBkYhnrUvPuGTttaDjlzypFGhlAYaGTQ&usqp=CAU" alt="Card image cap" style="width: 20rem;border: 1px  solid black">
-      <div class="card-body" style="border: 1px  solid black; width: 50rem;">
-        <ul>
-          <li><h5>Si desea ver los horarios disponibles de un nutricionista, haga click en "Ver horarios disponibles" del nutricionista que prefiera.</h5></li>
-          <li><h5>Luego, seleccione uno de los horarios disponibles del nutricionista en el que usted quiera que se realice la asesoría.</h5></li>
-          <li><h5>Cuando haya seleccionado un horario, verifique los datos del nutricionista y la fecha eligida.</h5></li>
-          <li><h5>Finalmente, haga click en "Agendar" para realizar el pago y agendar la asesoría.</h5></li>
-        </ul>
-      </div>
-    </div>
-  </div>
 </div>

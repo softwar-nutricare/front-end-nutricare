@@ -2,7 +2,7 @@
 <h2>Recetas publicadas</h2>
 
 <button type="submit" class="btn btn-success" (click)='insertRecipe(nutritionist_id)'>
-  Publicar nueva receta
+    Publicar nueva receta
 </button>
 <br/>
 <br>
@@ -13,38 +13,38 @@
 
 <br/>
 <table class="table table-striped">
-  <thead class="thead_dark">
-  <tr>
-    <th scope="col">Nombre</th>
-    <th scope="col">Descripción</th>
-    <th scope="col">Preparación</th>
-    <th scope="col">Ingredientes</th>
-    <th scope="col">Favoritos</th>
-    <th scope="col">Fecha de creación</th>
-    <th scope="col">Última modificación</th>
-  </tr>
-  </thead>
-  <tbody>
-  <ng-container *ngFor="let recipe of recipes">
-    <tr>
-      <td>{{ recipe.name }}</td>
-      <td>{{ recipe.descripcion }}</td>
-      <td>{{ recipe.preparation }}</td>
-      <td>{{ recipe.ingredients }}</td>
-      <td>{{ recipe.favorite }}</td>
-      <td>{{ recipe.created_at }}</td>
-      <td>{{ recipe.last_modification }}</td>
-      <td>
-        <button type="button" class="btn btn-success" (click)='updateRecipe(recipe, nutritionist_id)'>
-          Actualizar
-        </button>
-        <button type="button" class="btn btn-success" (click)='deleteRecipe(recipe.id)'>
-          Eliminar
-        </button>
-      </td>
-    </tr>
-  </ng-container>
-  </tbody>
+    <thead class="thead_dark">
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Preparación</th>
+            <th scope="col">Ingredientes</th>
+            <th scope="col">Favoritos</th>
+            <th scope="col">Fecha de creación</th>
+            <th scope="col">Última modificación</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let recipe of recipes">
+            <tr>
+                <td>{{ recipe.name }}</td>
+                <td>{{ recipe.descripcion }}</td>
+                <td>{{ recipe.preparation }}</td>
+                <td>{{ recipe.ingredients }}</td>
+                <td>{{ recipe.favorite }}</td>
+                <td>{{ recipe.created_at }}</td>
+                <td>{{ recipe.last_modification }}</td>
+                <td>
+                    <button type="button" class="btn btn-success" (click)='updateRecipe(recipe, nutritionist_id)'>
+                        Actualizar
+                    </button>
+                    <button type="button" class="btn btn-success" (click)='deleteRecipe(recipe.id)'>
+                        Eliminar
+                    </button>
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
 </table>
 
 <br>

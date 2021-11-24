@@ -29,33 +29,33 @@ export class ListNutritionistComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
     this.loadDataNutritionist();
   }
-
+  
   loadDataNutritionist(){
     this.nutritionisService.getNutritionistById(this.id)
-      .subscribe(datos=>{
-        console.log(datos)
-        this.nutritionist = datos;
+    .subscribe(datos=>{
+      console.log(datos)
+      this.nutritionist = datos;
 
-        this.professionalProfileService.getProfessionalprofileByNutritionist(this.nutritionist.id)
-          .subscribe(datos2=>{
-            console.log(datos2)
-            this.professionalProfile = datos2;
+      this.professionalProfileService.getProfessionalprofileByNutritionist(this.nutritionist.id)
+      .subscribe(datos2=>{
+        console.log(datos2)
+        this.professionalProfile = datos2;
 
-            this.professionalProfileService.findSpecialtiesByProfessionalProfileId(this.professionalProfile.id)
-              .subscribe(datos3=>{
-                console.log(datos3)
-                this.specialties = datos3;
-              }, error=>console.log(error));
-
-          }, error=>console.log(error));
+        this.professionalProfileService.findSpecialtiesByProfessionalProfileId(this.professionalProfile.id)
+        .subscribe(datos3=>{
+          console.log(datos3)
+          this.specialties = datos3;
+        }, error=>console.log(error));
 
       }, error=>console.log(error));
+      
+    }, error=>console.log(error));
   }
 
   //NUTRITIONIST
   deleteNutritionist(nutritionist: Nutritionist){
     this.nutritionisService.deleteNutritionist(nutritionist.id)
-      .subscribe(data=>{this.loadDataNutritionist();})
+    .subscribe(data=>{this.loadDataNutritionist();})
   }
 
   updateNutritionist(nutritionist: Nutritionist){
@@ -66,13 +66,13 @@ export class ListNutritionistComponent implements OnInit {
   insertSpecialty(professionalProfile: ProfessionalProfile){
     this.router.navigate(['new-specialty', this.id, professionalProfile.id]);
   }
-
+  
   deleteSpecialty(specialty: Specialty, professionalProfileId: number){
     this.professionalProfileService.deleteSpecialtyFromProfessionalProfile(specialty.id, professionalProfileId)
-      .subscribe(data=>{
-        this.specialtyService.deleteSpecialty(specialty.id)
-          .subscribe(data2=>{this.loadDataNutritionist();});
-      });
+    .subscribe(data=>{
+      this.specialtyService.deleteSpecialty(specialty.id)
+      .subscribe(data2=>{this.loadDataNutritionist();});
+    });
   }
 
   updateSpecialty(specialty: Specialty){
@@ -83,7 +83,7 @@ export class ListNutritionistComponent implements OnInit {
   updateProfessionalProfile(nutritionist: Nutritionist){
     this.router.navigate(['update-professional-profile', nutritionist.id]);
   }
-
+  
   return(){
     this.router.navigate(['menu-nutritionist', this.id]);
   }

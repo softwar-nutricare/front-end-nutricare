@@ -14,23 +14,23 @@ export class UpdateProfesionalProfileComponent implements OnInit {
   professionalProfile: ProfessionalProfile = new ProfessionalProfile();
 
   constructor(private route: ActivatedRoute,
-              private router: Router,
-              private professionalProfileService : ProfessionalProfileService) { }
+    private router: Router,
+    private professionalProfileService : ProfessionalProfileService) { }
 
   ngOnInit(): void {
     this.nutritionistId = this.route.snapshot.params['id'];
     this.professionalProfileService.getProfessionalprofileByNutritionist(this.nutritionistId)
-      .subscribe(datos=>{
-        console.log(datos)
-        this.professionalProfile = datos;
-      }, error=>console.log(error));
+    .subscribe(datos=>{
+      console.log(datos)
+      this.professionalProfile = datos;
+    }, error=>console.log(error));
   }
 
   updateProfessionalProfile(){
     this.professionalProfileService.updateProfessionalprofile(this.professionalProfile.id, this.professionalProfile)
-      .subscribe(datos=>{
-        console.log(datos)
-      }, error=>console.log(error));
+    .subscribe(datos=>{
+      console.log(datos)
+    }, error=>console.log(error));
     this.professionalProfile = new ProfessionalProfile();
     this.router.navigate(['list-nutritionists', this.nutritionistId])
   }

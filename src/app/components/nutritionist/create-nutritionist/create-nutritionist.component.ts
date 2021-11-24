@@ -16,19 +16,19 @@ export class CreateNutritionistComponent implements OnInit {
   professionalProfile: ProfessionalProfile = new ProfessionalProfile();
 
   constructor(private route: ActivatedRoute,
-              private router: Router,
-              private nutritionistService: NutritionistService,
-              private professionalProfileService: ProfessionalProfileService) { }
+    private router: Router,
+    private nutritionistService: NutritionistService,
+    private professionalProfileService: ProfessionalProfileService) { }
 
   ngOnInit(): void {
   }
 
   insertNutritionist(nutritionist: Nutritionist, professionalProfile: ProfessionalProfile){
     this.nutritionistService.createNutritionist(nutritionist)
-      .subscribe(datos=>{
-        console.log(datos)
-        this.insertProfessionalProfile(nutritionist, professionalProfile);
-      }, error=>console.log(error));
+    .subscribe(datos=>{
+      console.log(datos)
+      this.insertProfessionalProfile(nutritionist, professionalProfile);
+    }, error=>console.log(error));
     this.nutritionist = new Nutritionist();
     this.professionalProfile = new ProfessionalProfile();
     this.redirect();
@@ -36,12 +36,12 @@ export class CreateNutritionistComponent implements OnInit {
 
   insertProfessionalProfile(nutritionist: Nutritionist, professionalProfile: ProfessionalProfile){
     this.nutritionistService.getNutritionistByUsername(nutritionist.username)
-      .subscribe(datos=>{
-        console.log(datos)
-        professionalProfile.nutritionist = datos;
-        this.professionalProfileService.createProfessionalprofile(professionalProfile)
-          .subscribe(datos=>console.log(datos), error=>console.log(error));
-      }, error=>console.log(error));
+    .subscribe(datos=>{
+      console.log(datos)
+      professionalProfile.nutritionist = datos;
+      this.professionalProfileService.createProfessionalprofile(professionalProfile)
+      .subscribe(datos=>console.log(datos), error=>console.log(error));
+    }, error=>console.log(error));
   }
 
   redirect(){

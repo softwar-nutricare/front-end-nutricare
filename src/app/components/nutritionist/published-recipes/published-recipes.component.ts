@@ -17,21 +17,21 @@ export class PublishedRecipesComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private recipeService: RecipeService) { }
+     private recipeService: RecipeService) { }
 
   ngOnInit(): void {
     this.nutritionist_id = this.route.snapshot.params['id'];
     this.loadDataRecipes();
   }
-
+  
   loadDataRecipes(){
     this.recipeService.getRecipeByNutritionist(this.nutritionist_id)
-      .subscribe(recipes=>this.recipes=recipes);
+    .subscribe(recipes=>this.recipes=recipes);
   }
 
   deleteRecipe(id: number){
     this.recipeService.deleteRecipe(id)
-      .subscribe(data=>{this.loadDataRecipes();})
+    .subscribe(data=>{this.loadDataRecipes();})
   }
 
   updateRecipe(recipe: Recipe, nutritionistId: number){
@@ -41,7 +41,7 @@ export class PublishedRecipesComponent implements OnInit {
   insertRecipe(nutritionistId: number){
     this.router.navigate(['new-recipe', nutritionistId])
   }
-
+  
   return(){
     this.router.navigate(['menu-nutritionist', this.nutritionist_id]);
   }

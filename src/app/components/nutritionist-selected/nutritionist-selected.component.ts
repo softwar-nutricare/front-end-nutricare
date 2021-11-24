@@ -31,17 +31,17 @@ export class NutritionistSelectedComponent implements OnInit {
 
   searchNutritionistbyId(){
     this.nutritionistService.getNutritionistById(this.nutritionist_id)
-      //.subscribe(nutritionist=>this.nutritionist = nutritionist)
-      .subscribe(datos=>{
-        console.log(datos)
-        this.nutritionist = datos;
-      }, error=>console.log(error));
+    //.subscribe(nutritionist=>this.nutritionist = nutritionist)
+    .subscribe(datos=>{
+      console.log(datos)
+      this.nutritionist = datos;
+    }, error=>console.log(error));
   }
 
   createAppointment(client_id: number, nutritionist_id: number){
     this.router.navigate(['new-appointment', client_id, nutritionist_id])
   }
-
+  
   return(){
     this.router.navigate(['available-nutritionist', this.client_id])
   }

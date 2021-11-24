@@ -27,7 +27,7 @@ export class AppointmentHistoryNutritionistComponent implements OnInit {
 
   loadDataAppointments(){
     this.appointmentService.getAppointmentByNutritionist(this.nutritionist_id)
-      .subscribe(appointments=>this.appointments=appointments);
+    .subscribe(appointments=>this.appointments=appointments);
   }
 
   viewDiet(appointment: Appointment){
@@ -41,5 +41,5 @@ export class AppointmentHistoryNutritionistComponent implements OnInit {
   return(nutritionist_id: number){
     this.router.navigate(['menu-nutritionist', nutritionist_id])
   }
-
+  
 }

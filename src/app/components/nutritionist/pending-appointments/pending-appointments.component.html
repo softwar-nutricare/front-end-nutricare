@@ -1,18 +1,20 @@
 <br/>
-<h2>Historial de asesorías</h2>
+<h2>Asesorías pendientes</h2>
 <br/>
-<button type="button" class="btn btn-success" (click)='return(nutritionist_id)'>
-    Atrás
+
+<br/>
+<button type="button" class="btn btn-success" (click)='return()'>
+  Atrás
 </button>
 <br/>
-<div>
+
+<br/>
     <table class="table table-striped">
         <thead class="thead_dark">
             <tr>
                 <th scope="col">Cliente</th>
                 <th scope="col">Fecha de la asesoría</th>
-                <th scope="col">Dieta</th>
-                <th scope="col">Anotaciones</th>
+                <th scope="col">Acción</th>
             </tr>
         </thead>
         <tbody>
@@ -21,17 +23,13 @@
                     <td>{{ appointment.client.firstName }} {{ appointment.client.lastName }}</td>
                     <td>{{ appointment.appointmentDate }}</td>
                     <td>
-                        <button type="button" class="btn btn-success" (click)='viewDiet(appointment)'>
-                            Ver Dieta
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-success" (click)='viewNotes(appointment)'>
-                            Ver Anotaciones
+                        <button type="button" class="btn btn-success">
+                            Llamar
                         </button>
                     </td>
                 </tr>
             </ng-container>
         </tbody>
     </table>
-</div>
+
+
