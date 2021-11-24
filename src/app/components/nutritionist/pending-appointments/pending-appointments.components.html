@@ -1,0 +1,35 @@
+<br/>
+<h2>Asesorías pendientes</h2>
+<br/>
+
+<br/>
+<button type="button" class="btn btn-success" (click)='return()'>
+  Atrás
+</button>
+<br/>
+
+<br/>
+<table class="table table-striped">
+  <thead class="thead_dark">
+  <tr>
+    <th scope="col">Cliente</th>
+    <th scope="col">Fecha de la asesoría</th>
+    <th scope="col">Acción</th>
+  </tr>
+  </thead>
+  <tbody>
+  <ng-container *ngFor="let appointment of appointments">
+    <tr>
+      <td>{{ appointment.client.firstName }} {{ appointment.client.lastName }}</td>
+      <td>{{ appointment.appointmentDate }}</td>
+      <td>
+        <button type="button" class="btn btn-success">
+          Llamar
+        </button>
+      </td>
+    </tr>
+  </ng-container>
+  </tbody>
+</table>
+
+
