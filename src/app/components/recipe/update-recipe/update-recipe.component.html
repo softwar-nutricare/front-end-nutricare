@@ -1,0 +1,30 @@
+<br/>
+<form class="text-center border border-light p-5 col-lg-6 offset-lg-3" (ngSubmit)="updateRecipe(nutritionistId)">
+
+    <p class="h4 mb-4">Actualizar receta</p>
+
+    <input type="text" class="form-control" id="name" 
+    name= "name" placeholder="Name" 
+    required [(ngModel)]="recipe.name" />
+    <br>
+
+    <input type="text" class="form-control" id="description" 
+    name= "description" placeholder="Description" 
+    required [(ngModel)]="recipe.descripcion" />
+    <br>
+
+    <input type="text" class="form-control" id="preparation" 
+    name= "preparation" placeholder="Preparation" 
+    required [(ngModel)]="recipe.preparation" />
+    <br>
+
+    <input type="text" class="form-control" id="ingredients" 
+    name= "ingredients" placeholder="Ingredients" 
+    required [(ngModel)]="recipe.ingredients" />
+    <br>
+
+    <button type="submit" class="btn btn-success">
+        Save
+    </button>
+
+</form>
