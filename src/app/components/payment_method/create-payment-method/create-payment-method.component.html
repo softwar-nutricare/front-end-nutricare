@@ -1,0 +1,89 @@
+<div class="main-body" oncontextmenu='return false' class='snippet-body'>
+    <div class="card mt-50 mb-50">
+        <div class="card-title mx-auto"> Métodos de pago </div>
+        <div class="nav">
+            <ul class="mx-auto">
+                <li class="active">Payment</li>
+            </ul>
+        </div>
+        <form (ngSubmit)="insertPaymentMethod(client)">
+            <span id="card-header">Add new card:</span>
+            <div class="row-1">
+                <div class="row row-2"> <span id="card-inner">Nombre del titular</span> </div>
+                <div class="row row-2"> <input class="form-control" id="firstName" 
+                    name="firstName" type="text" placeholder="Firstname" required [(ngModel)]="payment.ownerFirstname"/> </div>
+            </div>
+            <div class="row-1">
+                <div class="row row-2"> <span id="card-inner">Apellidos del titular</span> </div>
+                <div class="row row-2"> <input class="form-control" id="lastName" 
+                    name="lastName" type="text" placeholder="Lastname" required [(ngModel)]="payment.ownerLastname"/> </div>
+            </div>
+            <div class="row three">
+                <div class="col-7">
+                    <div class="row-1">
+                        <div class="row row-2"> <span id="card-inner">Número de tarjeta</span> </div>
+                        <div class="row row-2">
+                             <input class="form-control" id="cardNumber" 
+                                name="cardNumber" type="number" placeholder="5134-5264-4"
+                                required [(ngModel)]="payment.cardNumber">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <span id="card-inner">Mes de expiración</span>
+                    <input class="form-control" id="expirationDateMonth" 
+                    name="expirationDateMonth"type="number" placeholder="Month" required [(ngModel)]="payment.expirationDateMonth"/> </div>
+                <div class="col-2"> 
+                    <span id="card-inner">Año de expiración</span>
+                    <input class="form-control" id="expirationDateYear" 
+                    name="expirationDateYear"type="number" placeholder="Year" required [(ngModel)]="payment.expirationDateYear"/> </div>
+            </div>
+            <div class="row three">
+                <div class="col-7">
+                    <div class="row-1">
+                        <div class="row row-2"> <span id="card-inner">Tipo de tarjeta</span> </div>
+                        <div class="row row-2"> 
+                            <select name="cardType" required [(ngModel)]="payment.cardType">
+                                <option value="Débito">Débito</option>
+                                <option value="Crédito">Crédito</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2"> <input class="form-control" id="postalCode" 
+                    name="postalCode"type="text" placeholder="Cod.Postal" required [(ngModel)]="payment.postalCode"/> </div>
+                <div class="col-2"> 
+                    <span id="card-inner">CVV</span>
+                    <input class="form-control" id="securityCode" 
+                    name="securityCode"type="text" placeholder="CVV" required [(ngModel)]="payment.securityCode"/> </div>
+            </div>
+            <div class="row three">
+                <div class="col-7">
+                    <div class="row-1">
+                        <div class="row row-2"> <span id="card-inner">Teléfono móvil</span> </div>
+                        <div class="row row-2"> <input class="form-control" id="phoneNumber" 
+                            name="phoneNumber"type="text" placeholder="993607807" required [(ngModel)]="payment.phoneNumber"> </div>
+                    </div>
+                </div>
+                <div class="col-2"> <input class="form-control" id="country" 
+                    name="country"type="text" placeholder="País" required [(ngModel)]="payment.country"/> </div>
+                <div class="col-2"> <input class="form-control" id="city" 
+                    name="city"type="text" placeholder="Ciudad" required [(ngModel)]="payment.city"/> </div>
+            </div>
+            <div class="row-1">
+                <div class="row row-2"> <span id="card-inner">Dirección</span> </div>
+                <div class="row row-2"> <input class="form-control" id="billingAddress" 
+                    name="billingAddress"type="text" placeholder="Dirección" required [(ngModel)]="payment.billingAddress"/> </div>
+            </div>
+            <div class="row-1">
+                <div class="row row-2"> <span id="card-inner">Dirección línea 2</span> </div>
+                <div class="row row-2"> <input class="form-control" id="billingAddressLine2" 
+                    name="billingAddressLine2"type="text" placeholder="Dirección línea 2" required [(ngModel)]="payment.billingAddressLine2"/> </div>
+            </div>
+            <button type="submit" class="btn btn-success"><b>Add card</b></button>
+            <button type="button" class="btn btn-success" (click)='return()'>
+                <b>Atrás</b>
+            </button>
+        </form>
+    </div>
+</div>
