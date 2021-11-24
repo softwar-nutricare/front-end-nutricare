@@ -1,0 +1,20 @@
+<br/>
+<form class="text-center border border-light p-5 col-lg-6 offset-lg-3" (ngSubmit)="updateRecommendation(nutritionistId)">
+
+    <p class="h4 mb-4">Actualizar recomendación</p>
+
+    <input type="text" class="form-control" id="name" 
+    name= "name" placeholder="Name" 
+    required [(ngModel)]="recommendation.name" />
+    <br>
+
+    <input type="text" class="form-control" id="description" 
+    name= "description" placeholder="Description" 
+    required [(ngModel)]="recommendation.description" />
+    <br>
+
+    <button type="submit" class="btn btn-success">
+        Save
+    </button>
+
+</form>

@@ -1,0 +1,23 @@
+<br/>
+<h2>Recomendaciones</h2>
+<br/>
+<button type="button" class="btn btn-success" (click)='return()'>
+  Atrás
+</button>
+<br/>
+<br>
+<div class="contenedor row g-3" >
+<ng-container *ngFor="let recommendation of recommendations">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title-name">{{recommendation.name}}</h5>
+      <br>
+      <img src="https://images.clarin.com/2019/01/07/la-dieta-dash-esta-disenada___DqcydNQHH_720x0__1.jpg" class="card-img-top" alt="">
+      <br>
+      <br>
+      <h6 class="card-title-descripton">Descripción: </h6>
+      <p class="card-text">{{recommendation.description}}</p>
+    </div>
+  </div>
+</ng-container>
+</div>

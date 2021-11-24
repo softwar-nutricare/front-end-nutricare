@@ -1,0 +1,29 @@
+<form class="text-center border border-light p-5 col-lg-6 offset-lg-3" (ngSubmit)="insertRecommendation(recommendation, nutritionist)">
+
+    <p class="h4 mb-4">Publicación de Recomendación</p>
+
+    <input type="hidden" id="RecipeId" name="RecipeId"
+     required [(ngModel)]="recommendation.id">
+
+    <input type="text" class="form-control" id="name"
+    name="name" placeholder="Name"
+    required [(ngModel)]="recommendation.name"/>
+
+    <br>
+    
+    <input type="text" class="form-control" id="description" 
+    name="description" placeholder="Description"
+    required [(ngModel)]="recommendation.description"/>
+
+    <br>
+
+    <button type="submit" class="btn btn-success">
+        Publicar
+    </button>
+    <br>
+    <br>
+    <button type="button" class="btn btn-success" (click)='return()'>
+        Atrás
+    </button>
+
+</form>
